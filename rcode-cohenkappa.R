@@ -1,6 +1,6 @@
 # Define a vector of packages to load
-libraries <- c("ggplot2", "dplyr", "tidyr", "readr", "purrr", "tibble", "stringr", 
-               "forcats" , "vcd" , "psych" , "irr" , "krippendorffsalpha" , "ltm" 
+libraries <- c("ggplot2", "dplyr", "tidyr" , "tibble", "stringr", 
+               "vcd" , "psych" , "irr" , "krippendorffsalpha" , "ltm" 
                , "readxl" )
 
 # Function to install and load a package if it is not already installed
@@ -12,17 +12,19 @@ lapply(libraries, function(lib) {
 })
 
 # reads the excel file containing the 'coded' questionnaire submission
+# Rows 2-12 contains number 1 or 2
+# Row 1 is set as the column name
 # Yes is coded as '1' and No is coded as '0'
 test1 <- read_excel("~/Desktop/test1.xlsx", col_names = TRUE ,
-                    range = "B1:C7")
+                    range = "B1:C12")
 # prints out table of the excel sheet in a view tab
 view(test1)
 # checks column name
 colnames(test1)
 
-# converts the read excel file and reorganize it to a dataframe variable
+# converts the read excel file and reorganize it to a data frame variable
 dftest1 <- data.frame(test1)
 
-# calculates cohen kappa
+# calculates Cohen's Kappa
 cohen.kappa(x = dftest1)
 
