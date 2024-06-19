@@ -12,7 +12,7 @@ lapply(libraries, function(lib) {
 })
 
 # reads the excel file containing the 'coded' questionnaire submission
-# Rows 2-12 contains number 1 or 2
+# Rows 1-12 contains number 1 or 2
 # Row 1 is set as the column name
 # Yes is coded as '1' and No is coded as '0'
 test1 <- read_excel("~/Desktop/test1.xlsx", col_names = TRUE ,
@@ -27,4 +27,6 @@ dftest1 <- data.frame(test1)
 
 # calculates Cohen's Kappa
 cohen.kappa(x = dftest1)
+
+# calculates percentage agreement among two raters
 agree(dftest1 , tolerance = 0)
