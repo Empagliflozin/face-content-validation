@@ -1,6 +1,6 @@
 #define vector of packages to load
 # List of libraries to load
-libraries <- c("ggplot2", "dplyr", "tidyr", "readr", "purrr", "tibble", "stringr", "forcats" , "vcd")
+libraries <- c("ggplot2", "dplyr", "tidyr", "readr", "purrr", "tibble", "stringr", "forcats" , "vcd" , "psych" , "irr" , "krippendorfsalpha" )
 
 # Function to load each library
 lapply(libraries, function(lib) {
@@ -9,3 +9,4 @@ lapply(libraries, function(lib) {
     library(lib, character.only = TRUE)
   }
 })
+
