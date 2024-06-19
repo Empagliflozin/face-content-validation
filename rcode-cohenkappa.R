@@ -1,7 +1,7 @@
 # Define a vector of packages to load
 libraries <- c("ggplot2", "dplyr", "tidyr" , "tibble", "stringr", 
                "vcd" , "psych" , "irr" , "krippendorffsalpha" , "ltm" 
-               , "readxl" )
+               , "readxl")
 
 # Function to install and load a package if it is not already installed
 lapply(libraries, function(lib) {
@@ -16,7 +16,7 @@ lapply(libraries, function(lib) {
 # Row 1 is set as the column name
 # Yes is coded as '1' and No is coded as '0'
 test1 <- read_excel("~/Desktop/test1.xlsx", col_names = TRUE ,
-                    range = "B1:C12")
+                    range = "B1:C17")
 # prints out table of the excel sheet in a view tab
 view(test1)
 # checks column name
@@ -27,4 +27,4 @@ dftest1 <- data.frame(test1)
 
 # calculates Cohen's Kappa
 cohen.kappa(x = dftest1)
-
+agree(dftest1 , tolerance = 0)
