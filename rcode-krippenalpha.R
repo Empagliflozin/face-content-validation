@@ -11,3 +11,20 @@ lapply(libraries, function(lib) {
   }
 })
 
+library(readxl)
+test1 <- read_excel("Desktop/test1.xlsx", 
+                    sheet = "Sheet2", range = "C4:F20")
+View(test1)
+# 1 = yes 
+# 2 = no
+
+#converts test1 into a matrix 
+matrix1 <- as.matrix(test1)
+view(matrix1)
+
+# employs customary method on nominal data
+finalalpha <- krippendorffs.alpha(matrix1 , level = "nominal" , method = "customary" , 
+                    confint = TRUE , control = list(bootit = 1000 , parallel = FALSE))
+
+# prints out the summarized form of the alpha value and its 95% CI
+summary(finalalpha , conf.level = 0.95)
