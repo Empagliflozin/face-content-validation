@@ -24,7 +24,7 @@ view(matrix1)
 
 # employs customary method on nominal data
 finalalpha <- krippendorffs.alpha(matrix1 , level = "nominal" , method = "customary" , 
-                    confint = TRUE , control = list(bootit = 1000 , parallel = FALSE))
+                    confint = TRUE , control = list(bootit = 100000 , parallel = FALSE))
 
 # prints out the summarized form of the alpha value and its 95% CI
 summary(finalalpha , conf.level = 0.95)
