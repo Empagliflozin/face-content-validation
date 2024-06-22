@@ -12,8 +12,8 @@ lapply(libraries, function(lib) {
 })
 
 library(readxl)
-test1 <- read_excel("Desktop/test1.xlsx", 
-                    sheet = "Sheet2", range = "C4:F20")
+test1 <- read_excel("~/Desktop/test1.xlsx", 
+                    sheet = "Sheet2", range = "C4:L20")
 View(test1)
 # 1 = yes 
 # 2 = no
