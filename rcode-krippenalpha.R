@@ -11,10 +11,14 @@ lapply(libraries, function(lib) {
   }
 })
 
+# range variable (C4:N20) covers the spreadsheet cells 
+# containing the 13 raters who participated in the face validation process
+
 library(readxl)
 test1 <- read_excel("~/Desktop/test1.xlsx", 
                     sheet = "Sheet2", 
-                    range = "C4:L20")
+                    range = "C4:N20")
+
 View(test1)
 # 1 = yes 
 # 2 = no
