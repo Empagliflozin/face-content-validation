@@ -29,12 +29,13 @@ matrix1 <- as.matrix(test1)
 # views matrix created from test1
 view(matrix1)
 
-# employs customary method on nominal data
+# employs a customary or an analytical method on nominal data
+# un-comment the control variable and change the method to customary if a confidence interval is needed
 finalalpha <- krippendorffs.alpha(matrix1 , 
-                                  level = "nominal" , 
-                                  method = "customary" , 
-                                  confint = TRUE , 
-                                  control = list(bootit = 100000 , parallel = FALSE))
+                                  level = "nominal", 
+                                  method = "analytical",
+                                  confint = FALSE)
+                                  #control = list(bootit = 100000 , parallel = FALSE))
 
 # prints out the summarized form of the alpha value and its 95% CI
-summary(finalalpha , conf.level = 0.95)
+summary(finalalpha)
